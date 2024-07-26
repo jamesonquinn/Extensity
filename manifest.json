@@ -1,5 +1,5 @@
 {
-  "name": "Extensity",
+  "name": "Extensiqy",
   "version": "1.11.0",
   "manifest_version": 2,
   "description": "Quickly enable/disable Google Chrome extensions",
@@ -11,7 +11,7 @@
   },
   "browser_action": {
     "default_icon": "images/iconbar.png",
-    "default_title": "Extensity",
+    "default_title": "Extensiqy",
     "default_popup": "index.html"
   },
   "background": {
