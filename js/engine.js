@@ -267,7 +267,13 @@ var ExtensionModel = function(e) {
   };
 
   self.disable = function() {
-    self.status(false);
+    //self.status(false);
+    // copilot: help me set a timer that will re-enable the extension after half an hour
+    //setTimeout(function() {
+    //  self.status(true);
+    //}, 1000 
+     // * 30 * 60 // comment out for testing with 1 second
+    //);
   }
 
   self.status.subscribe(function(value) {
@@ -317,7 +323,7 @@ var ExtensionCollectionModel = function() {
     _(results).chain()
       .sortBy(function(i) { return i.name.toUpperCase(); })
       .each(function(i){
-        if (i.name != "Extensity" && i.type != 'theme') {
+        if (i.name != "Extensiqy" && i.type != 'theme') {
           self.items.push(new ExtensionModel(i));
         }
       });

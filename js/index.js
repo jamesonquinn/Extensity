@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     self.toggleStyle = ko.pureComputed(function() {
-      return (self.any()) ? 'fa-toggle-off' : 'fa-toggle-on'
+      //return (self.any()) ? 'fa-toggle-off' : 'fa-toggle-on'
     });
 
     var disableFilterFn = function(item) {
@@ -43,6 +43,17 @@ document.addEventListener("DOMContentLoaded", function() {
         // Disable
         self.toggled(self.exts.enabled.pluck());
         self.exts.enabled.disable(disableFilterFn);
+
+        // set timer to re-enable it after 30 minutes
+        //setTimeout(function() {
+          _(self.toggled()).each(function(id) {
+            try{ self.exts.find(id).enable();} catch(e) {}
+          });
+          self.toggled([]);
+        //}, 1000 
+         //* 30 * 60\
+        //);
+
       };
     };
 
